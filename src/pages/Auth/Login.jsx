@@ -1,7 +1,7 @@
 import React from 'react'
-import { FormContext } from '../context/context'
-import Form from '../component/Form'
-import Button from '../component/Button'
+import { FormContext } from '../../context/context'
+import Form from '../../component/Form'
+import Button from '../../component/Button'
 import { Link } from 'react-router-dom'
 function Login() {
     const initialFields = [
@@ -26,7 +26,7 @@ function Login() {
                     <img src='https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/TMS%2FlagunaLogo.png?alt=media&token=f37b2e70-4d12-4e0f-8f67-2673b222b26b' />
                 </div>
             </div>
-            <h1 className='font-bold text-white text-2xl font-poppins text-center'>Welcome Admin</h1>
+            <h1 className='font-bold text-white text-2xl font-poppins text-center'>Welcome</h1>
             <div className='grid place-items-center gap-2'>
                 <FormContext.Provider value={{ 
                     initialFields
