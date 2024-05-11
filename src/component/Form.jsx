@@ -1,13 +1,10 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react'
-import { useFormContext } from '../utils/context'
-import { useLoginMutation } from '../services/loginApi';
-import { useCreateDataMutation } from '../services/alumniApi';
+import { useFormContext } from '../context/context';
 import { toast } from 'react-toastify';
 
 const Form = (ref => {
     const context = useFormContext()
     const [formData, setFormData] = useState({});
-    const [createData] = useCreateDataMutation()
     const handleInputChange = (e) => {
       const {name, value} = e.target
       setFormData(prev => ({
@@ -16,29 +13,25 @@ const Form = (ref => {
       }))
     }
 
-    useImperativeHandle(context?.ref, () => ({
-      handleSubmit: (actionType) => handleSubmit(actionType)
-    }));
+    // const handleSubmit = (actionType) => {
+    //       createData({
+    //         url: 'register',
+    //         data: formData,
+    //         actionType
+    //       }).then(res => {
+    //         if(res.data.status === "success"){
+    //           toast.success("Data Inserted Successfully")
+    //           setFormData(Object.fromEntries(
+    //             Object.entries(formData).map(([key]) => [key, ''])
+    //           ));
 
-    const handleSubmit = (actionType) => {
-          createData({
-            url: 'register',
-            data: formData,
-            actionType
-          }).then(res => {
-            if(res.data.status === "success"){
-              toast.success("Data Inserted Successfully")
-              setFormData(Object.fromEntries(
-                Object.entries(formData).map(([key]) => [key, ''])
-              ));
+    //         }
+    //       })
+    //       if(formData.role === 'Select'){
+    //         toast.error("Select is not an Option")
+    //       }
 
-            }
-          })
-          if(formData.role === 'Select'){
-            toast.error("Select is not an Option")
-          }
-
-    }
+    // }
 
     const renderForm = (row, rowIndex) => {
         return context?.initialFields?.map(field => (
@@ -58,7 +51,7 @@ const Form = (ref => {
                       name={field.name}
                       value={formData[field.name]}
                       onChange={handleInputChange}
-                      className="border border-gray-300 bg-gray-100 text-sm w-full px-3 py-2 focus:outline-none focus:border-gray-500 mb-2"
+                      className="border border-gray-300 bg-gray-100 text-sm w-full px-3 py-2 focus:outline-none focus:border-gray-500 mb-2 rounded-md"
                       placeholder={field.placeholder}
                     />
                    </div>
@@ -78,7 +71,7 @@ const Form = (ref => {
                         name={field.name}
                         value={formData[field.name]}
                         onChange={handleInputChange}
-                        className="border border-gray-300 bg-gray-100 text-sm w-full px-3 py-2 focus:outline-none focus:border-gray-500 mb-2"
+                        className="border border-gray-300 bg-gray-100 text-sm w-full px-3 py-2 focus:outline-none focus:border-gray-500 mb-2 rounded-md"
                         placeholder={field.placeholder}
                     />
                    </div>
@@ -98,7 +91,7 @@ const Form = (ref => {
                         name={field.name}
                         value={formData[field.name]}
                         onChange={handleInputChange}
-                        className="border border-gray-300 bg-gray-100 text-sm w-full px-3 py-2 focus:outline-none focus:border-gray-500 mb-2"
+                        className="border border-gray-300 bg-gray-100 text-sm w-full px-3 py-2 focus:outline-none focus:border-gray-500 mb-2 rounded-md"
                         placeholder={field.placeholder}
                       />
                    </div>
@@ -118,7 +111,7 @@ const Form = (ref => {
                       name={field.name}
                       value={formData[field.name]}
                       onChange={handleInputChange}
-                      className="border border-gray-300 bg-gray-100 text-sm w-full px-3 py-2 focus:outline-none focus:border-gray-500 mb-2"
+                      className="border border-gray-300 bg-gray-100 text-sm w-full px-3 py-2 focus:outline-none focus:border-gray-500 mb-2 rounded-md"
                       placeholder={field.placeholder}
                     />
                    </div>
@@ -150,7 +143,7 @@ const Form = (ref => {
     }
   return (
     <div className="px-4">
-        <form onSubmit={handleSubmit}>
+        <form>
             <div className='w-full grid place-items-center'>
                 <h1 className='text-white text-2xl font-bold'>{context?.title}</h1>
             </div>

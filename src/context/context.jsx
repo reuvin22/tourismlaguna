@@ -4,4 +4,4 @@ export const FormContext = createContext({
     initialFields: []
 })
 
-export const useFormContext = useContext(FormContext)
+export const useFormContext = () => useContext(FormContext);

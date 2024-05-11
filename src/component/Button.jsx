@@ -23,6 +23,9 @@ function Button({
         case 'green':
             bgColorChange = "bg-green-500 hover:bg-green-600"
         break;
+        case 'slate':
+            bgColorChange = "bg-slate-500 hover:bg-slate-600"
+        break;
         default:
             bgColorChange = "bg-blue-500 hover:bg-blue-600"
         break;
@@ -30,7 +33,7 @@ function Button({
 
     switch(btnSize){
         case 'fullWidth':
-            btnSizeChange = "w-[100%]"
+            btnSizeChange = "w-52"
         break;
 
         case 'normalSize':
