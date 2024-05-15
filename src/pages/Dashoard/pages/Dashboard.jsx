@@ -62,7 +62,7 @@ function Dashboard() {
         <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-80 w-[66%]'>
 
         </div>
-        <div className='rounded-lg px-10 bg-[#F9EFEF] h-80 w-[27%]'>
+        <div className='rounded-lg px-10 bg-[#F9EFEF] h-80 w-[29.5%]'>
           <div className='grid place-items-center mt-7'>
             <span className='font-bold font-poppins text-2xl'>New Staffs</span>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
