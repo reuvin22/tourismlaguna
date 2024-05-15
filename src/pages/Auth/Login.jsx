@@ -39,7 +39,7 @@ function Login() {
                 >
                     Login
                 </Button>
-                <Link><span className='text-blue-500 hover:text-blue-200'>Forgot Password</span></Link>
+                <Link to='/forgotpass'><span className='text-blue-500 hover:text-blue-200'>Forgot Password</span></Link>
             </div>
         </div>
     </div>
