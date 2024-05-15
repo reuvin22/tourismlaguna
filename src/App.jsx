@@ -6,9 +6,10 @@ import Sidebar from "./component/Sidebar"
 
 function App() {
   return (
-    <div className="bg-[#E5E9F8] h-[100vh]">
+    <div className="bg-[#E5E9F8]">
       <Routes>
         <Route path='/' element={<MainDashboard />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/forgotpass' element={<ForgotPass />}/>
       </Routes>
     </div>

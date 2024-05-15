@@ -33,12 +33,14 @@ function Login() {
                  }}>
                     <Form />
                 </FormContext.Provider>
+                <Link to='/'>
                 <Button
                     bgColor='blue'
                     btnSize='fullWidth'
                 >
                     Login
                 </Button>
+                </Link>
                 <Link to='/forgotpass'><span className='text-blue-500 hover:text-blue-200'>Forgot Password</span></Link>
             </div>
         </div>

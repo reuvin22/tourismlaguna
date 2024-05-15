@@ -29,7 +29,7 @@ function ForgotPass() {
                 >
                     Submit
                 </Button>
-                <Link to='/'><span className='text-blue-500 hover:text-blue-200'>Back to Login</span></Link>
+                <Link to='/login'><span className='text-blue-500 hover:text-blue-200'>Back to Login</span></Link>
             </div>
         </div>
     </div>

@@ -5,8 +5,7 @@ export const FormContext = createContext({
 })
 
 export const NavigationContext = createContext({
-    activePage: null,
-    onPage: () => {}
+    activePage: () => {}
 })
 export const useFormContext = () => useContext(FormContext);
 export const useNavigationContext = () => useContext(NavigationContext);
