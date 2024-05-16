@@ -33,7 +33,7 @@ function Login() {
                  }}>
                     <Form />
                 </FormContext.Provider>
-                <Link to='/'>
+                <Link to='/dashboard'>
                 <Button
                     bgColor='blue'
                     btnSize='fullWidth'
