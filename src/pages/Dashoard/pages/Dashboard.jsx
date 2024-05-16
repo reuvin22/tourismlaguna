@@ -1,6 +1,7 @@
 import React from 'react'
 import Cards from '../../../component/Cards'
-import { Chart } from 'chart.js'
+import PieChart from '../../../component/PieChart'
+import LineChart from '../../../component/LineChart'
 
 function Dashboard() {
   const cards = [
@@ -42,6 +43,82 @@ function Dashboard() {
     }
   ]
 
+  const pieChartData = [
+    {
+        title: "Visitor's Category",
+        labels: ['Old', 'Children', 'Adult'],
+        datasets: [
+            {
+                data: [300, 100, 50],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4,
+            }
+        ],
+    },{
+      title: "Visitor's Gender",
+      labels: ['Male', 'Female'],
+      datasets: [
+          {
+              data: [300, 100],
+              backgroundColor: [
+                  'rgb(54, 162, 235)',
+                  'rgb(255, 99, 132)',
+              ],
+              hoverOffset: 4,
+          }
+      ],
+  },{
+    title: "Visitor's Nationality",
+    labels: ['Local', 'Foreign'],
+    datasets: [
+        {
+            data: [300, 100],
+            backgroundColor: [
+                'rgb(54, 162, 235)',
+                'rgb(255, 99, 132)',
+            ],
+            hoverOffset: 4,
+        }
+    ],
+}
+
+];
+
+  const currentDate = new Date();
+  const labels = Array.from({ length: 7 }, (_, i) => {
+    const date = new Date(currentDate);
+    date.setFullYear(date.getFullYear() - i);
+    return date.toLocaleString('en-US', { year: 'numeric' });
+  });
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Expenses',
+      data: [65, 59, 80, 81, 56, 55, 40, 50,20,12,13],
+      fill: false,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.1
+    },{
+      label: 'Profit',
+      data: [50, 23, 28, 14, 56, 23, 98, 53,57,34,87],
+      fill: false,
+      borderColor: 'red',
+      tension: 0.1
+    },{
+      label: 'Income',
+      data: [23, 21, 65, 98, 76, 45, 65, 9,12,58,60],
+      fill: false,
+      borderColor: 'blue',
+      tension: 0.1
+    }
+    
+  ]
+  };
+
   return (
     <div className='w-full mt-10 grid gap-y-5'>
       <div className='flex gap-5'>
@@ -57,32 +134,10 @@ function Dashboard() {
               )
             })}
           </div>
-          <div className='flex'>
-            <div className='grid border-2 rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] w-[66%]'>
-                <h1 className='text-2xl font-bold'>Test</h1>
-                <div className='flex gap-5'>
-                    <span className='text-4xl font-bold'>15</span>
-                    
-                </div>
-            </div>
-            <div className='grid border-2 rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] w-[34%] h-52'>
-                <h1 className='text-lg font-bold'>Visitor's Gender</h1>
-                <div className='gap-5'>
-                  <div class="mb-1 text-lg font-medium dark:text-white">Male</div>
-                    <div class="flex w-full h-6 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                      <div class="progress-bar bg-blue-600 text-xs text-white whitespace-nowrap dark:bg-blue-500 transition duration-500 w-[75%] flex justify-center">
-                          <span class="flex justify-center items-center rounded-full overflow-hidden">75%</span>
-                      </div>
-                  </div>
-                  <div class="mb-1 text-lg font-medium dark:text-white">Female</div>
-                    <div class="flex w-full h-6 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                      <div class="progress-bar bg-red-600 text-xs text-white whitespace-nowrap dark:bg-red-500 transition duration-500 w-[15%] flex justify-center">
-                          <span class="flex justify-center items-center rounded-full overflow-hidden">15%</span>
-                      </div>
-                  </div>
-                </div>
-                
-            </div>
+          <div className='flex gap-2 w-full relative'>
+            {pieChartData.map((data, index) => (
+              <PieChart key={index} data={data} title={data.title}/>
+            ))}
           </div>
         </div>
           <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-full w-56'>
@@ -99,7 +154,7 @@ function Dashboard() {
       </div>
       <div className='flex gap-5'>
         <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-80 w-[66%]'>
-          <canvas id="chart"></canvas>
+          <LineChart data={data} title="Annual Chart"/>
         </div>
         <div className='rounded-lg px-10 bg-[#F9EFEF] h-80 w-[32%] overflow-y-auto overflow-x-hidden'>
           <div className='grid place-items-center py-3'>

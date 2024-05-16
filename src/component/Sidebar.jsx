@@ -6,6 +6,7 @@ function Sidebar() {
   const context = useNavigationContext()
   const [openPartAcc, setPartOpenAcc] = useState(false)
   const [openTourAcc, setTourOpenAcc] = useState(false)
+
   const handleTabClick = (data) => {
     context?.activePage(data)
   }
@@ -30,7 +31,7 @@ function Sidebar() {
             className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
             onClick={() => handleTabClick('tab2')}
           >
-            Staff's Registration
+            Staffs
           </button>
           <button
             className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-15 hover:text-blue-800'
@@ -41,7 +42,7 @@ function Sidebar() {
               {openTourAcc ? <img src="https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/minus.png?alt=media&token=a9cfa397-0aad-4d49-aa2b-9edde461e620" alt="Accordion" className='h-5 w-5 ml-10' /> : <img src="https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/plus.png?alt=media&token=5ea79c12-c236-4980-8782-7cc3660fea98" alt="Accordion" className='h-5 w-5 ml-10' />}
             </div>
           </button>
-          <div className={`${openTourAcc ? 'visible' : 'hidden'} w-full bg-blue-500 rounded-lg`}>
+          <div className={`${openTourAcc ? 'visible' : 'hidden'} mt-[-5%] w-full bg-blue-500 rounded-lg`}>
             <button
               className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
               onClick={() => handleTabClick('subPackage1')}
@@ -89,6 +90,18 @@ function Sidebar() {
               onClick={() => handleTabClick('tab6')}
             >
               Human Resource
+            </button>
+            <button
+              className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
+              onClick={() => handleTabClick('tab7')}
+            >
+              Reports
+            </button>
+            <button
+              className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
+              onClick={() => handleTabClick('tab8')}
+            >
+              Inquiries
             </button>
           {/* <Link to="/login">
             <button

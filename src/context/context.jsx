@@ -1,11 +1,13 @@
 import { createContext, useContext } from "react";
 
 export const FormContext = createContext({
-    initialFields: []
+    initialFields: [],
+    design: null,
 })
 
 export const NavigationContext = createContext({
-    activePage: () => {}
+    activePage: () => {},
+    ref: null
 })
 
 export const TableContext = createContext({

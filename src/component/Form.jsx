@@ -147,7 +147,7 @@ const Form = (ref => {
             <div className='w-full grid place-items-center'>
                 <h1 className='text-white text-2xl font-bold'>{context?.title}</h1>
             </div>
-            <div className={`${context?.fontColor}`}>
+            <div className={`${context?.design}`}>
               {renderForm()}
             </div>
         </form>

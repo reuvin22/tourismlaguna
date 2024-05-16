@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import Dashboard from './pages/Dashboard';
 import Sidebar from '../../component/Sidebar';
 import { NavigationContext } from '../../context/context';
@@ -14,45 +14,46 @@ import { useNavigate } from 'react-router-dom';
 import Loading from '../../component/Loading';
 import LocalPartners from './pages/Partners/LocalPartners';
 import InternationalPartners from './pages/Partners/InternationalPartners';
+import Staffs from './pages/Staffs';
+import Reports from './pages/Reports';
+import Inquiries from './pages/Inquiries';
 
 function MainDashboard() {
   const [activeTab, setActiveTab] = useState('tab1')
   const [dropdown, setOpenDropDown] = useState(false)
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
-  const renderPage = (activeTab) => {
-        switch(activeTab) {
-            case 'tab1':
-                return <Dashboard />
-
-            case 'tab2':
-                return <Registration />
-
-            case 'tab3':
-                return <Booking />
-
-            case 'tab4':
-                return <Partner />
-
-            case 'localPartners':
-                return <LocalPartners />
-            
-            case 'internationalPartners':
-                return <InternationalPartners />
-                    
-            case 'subPackage1':
-                return <TourPackage />
-            
-            case 'subPackage2':
-                return <TourPackage2 />
-
-            case 'tab6':
-                return <HumanResource />
-
-            default:
-                return <Dashboard />
-        }
+  
+  const renderPage = useMemo(() => {
+    switch (activeTab) {
+      case 'tab1':
+        return <Dashboard />;
+      case 'tab2':
+        return <Staffs />;
+      case 'register':
+        return <Registration />;
+      case 'tab3':
+        return <Booking />;
+      case 'tab4':
+        return <Partner />;
+      case 'localPartners':
+        return <LocalPartners />;
+      case 'internationalPartners':
+        return <InternationalPartners />;
+      case 'subPackage1':
+        return <TourPackage />;
+      case 'subPackage2':
+        return <TourPackage2 />;
+      case 'tab6':
+        return <HumanResource />;
+      case 'tab7':
+        return <Reports />;
+      case 'tab8':
+        return <Inquiries />;
+      default:
+        return <Dashboard />;
     }
+  }, [activeTab]);
 
     useEffect(() => {
         setTimeout(() => {
@@ -71,6 +72,10 @@ function MainDashboard() {
 
             case 'tab2':
                 setActiveTab('tab2')
+            break;
+
+            case 'register':
+                setActiveTab('register')
             break;
 
             case 'tab3':
@@ -100,12 +105,21 @@ function MainDashboard() {
             case 'tab6':
                 setActiveTab('tab6')
             break;
+
+            case 'tab7':
+                setActiveTab('tab7')
+            break;
+
+            case 'tab8':
+                setActiveTab('tab8')
+            break;
         }
     }
 
     const handleOpen = () => {
         setOpenDropDown(!dropdown)
     }
+    
   return (
     <>
     {loading ? <Loading /> :
@@ -148,13 +162,13 @@ function MainDashboard() {
                         <NavigationContext.Provider value={{ 
                             activePage: (data) => handleOnClick(data)
                          }}>
-                            {renderPage(activeTab)}
+                            {renderPage}
                         </NavigationContext.Provider>
                     </div>
                 </div>
             </div>
-             }
-            
+            }
+
             </> 
         )
 }
