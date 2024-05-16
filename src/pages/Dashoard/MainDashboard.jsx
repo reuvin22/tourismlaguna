@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Dashboard from './pages/Dashboard';
 import Sidebar from '../../component/Sidebar';
 import { NavigationContext } from '../../context/context';
@@ -6,15 +6,19 @@ import Registration from './pages/Registration';
 import Booking from './pages/Booking';
 import Login from '../Auth/Login';
 import Partner from './pages/Partner';
-import TourPackage from './pages/TourPackage';
+import TourPackage from './pages/TourPackage/TourPackage';
 import HumanResource from './pages/HumanResource';
-import TourPackage2 from './pages/TourPackage2';
+import TourPackage2 from './pages/TourPackage/TourPackage2';
 import Dropdown from '../../component/Dropdown';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../component/Loading';
+import LocalPartners from './pages/Partners/LocalPartners';
+import InternationalPartners from './pages/Partners/InternationalPartners';
 
 function MainDashboard() {
   const [activeTab, setActiveTab] = useState('tab1')
   const [dropdown, setOpenDropDown] = useState(false)
+  const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
   const renderPage = (activeTab) => {
         switch(activeTab) {
@@ -30,6 +34,12 @@ function MainDashboard() {
             case 'tab4':
                 return <Partner />
 
+            case 'localPartners':
+                return <LocalPartners />
+            
+            case 'internationalPartners':
+                return <InternationalPartners />
+                    
             case 'subPackage1':
                 return <TourPackage />
             
@@ -43,6 +53,12 @@ function MainDashboard() {
                 return <Dashboard />
         }
     }
+
+    useEffect(() => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      }, []);
 
     const handleLogout = () => {
         navigate('/login')
@@ -65,6 +81,14 @@ function MainDashboard() {
                 setActiveTab('tab4')
             break;
 
+            case 'localPartners':
+                setActiveTab('localPartners')
+            break;
+
+            case 'internationalPartners':
+                setActiveTab('internationalPartners')
+            break;
+
             case 'subPackage1':
                 setActiveTab('subPackage1')
             break;
@@ -83,6 +107,8 @@ function MainDashboard() {
         setOpenDropDown(!dropdown)
     }
   return (
+    <>
+    {loading ? <Loading /> :
             <div className='flex'>
                 <div>
                     <NavigationContext.Provider value={{ 
@@ -127,6 +153,9 @@ function MainDashboard() {
                     </div>
                 </div>
             </div>
+             }
+            
+            </> 
         )
 }
 

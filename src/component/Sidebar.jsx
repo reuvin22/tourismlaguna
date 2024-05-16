@@ -10,7 +10,7 @@ function Sidebar() {
     context?.activePage(data)
   }
   return (
-    <div className='bg-blue-800 w-60 h-[100vh] sm:hidden overflow-y-hidden'>
+    <div className='bg-gradient-to-r from-[#152259] to-blue-900 w-60 h-[100vh] sm:hidden overflow-y-hidden'>
       <div className='grid gap-10'>
         <div className='grid place-items-center w-full h-52'>
             <div className='rounded-full bg-white w-32 h-32'>
@@ -36,12 +36,12 @@ function Sidebar() {
             className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-15 hover:text-blue-800'
             onClick={() => setTourOpenAcc(!openTourAcc)}
           >
-            <div className='flex justify-center items-center w-full'>
-              <span className='ml-12'> Tour Package</span>
+            <div className='flex justify-center items-center w-full h-12'>
+              <span> Tour Package</span>
               {openTourAcc ? <img src="https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/minus.png?alt=media&token=a9cfa397-0aad-4d49-aa2b-9edde461e620" alt="Accordion" className='h-5 w-5 ml-10' /> : <img src="https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/plus.png?alt=media&token=5ea79c12-c236-4980-8782-7cc3660fea98" alt="Accordion" className='h-5 w-5 ml-10' />}
             </div>
           </button>
-          <div className={`${openTourAcc ? 'visible' : 'hidden'} gap-5 w-full bg-blue-500 mt-[-5%] rounded-lg`}>
+          <div className={`${openTourAcc ? 'visible' : 'hidden'} w-full bg-blue-500 rounded-lg`}>
             <button
               className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
               onClick={() => handleTabClick('subPackage1')}
@@ -70,18 +70,18 @@ function Sidebar() {
               {openPartAcc ? <img src="https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/minus.png?alt=media&token=a9cfa397-0aad-4d49-aa2b-9edde461e620" alt="Accordion" className='h-5 w-5 ml-10' /> : <img src="https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/plus.png?alt=media&token=5ea79c12-c236-4980-8782-7cc3660fea98" alt="Accordion" className='h-5 w-5 ml-10' />}
               </div>
             </button>
-          <div className={`${openPartAcc ? 'visible' : 'hidden'} w-full bg-blue-500 mt-[-5%] rounded-lg`}>
+          <div className={`${openPartAcc ? 'visible' : 'hidden'} h-24 gap-5 w-full bg-blue-500 mt-[-5%] rounded-lg`}>
             <button
-              className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
-              onClick={() => handleTabClick('subPartner1')}
+              className='transition delay-75 duration-75 ease-in text-white font-poppins text-lg font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
+              onClick={() => handleTabClick('localPartners')}
             >
-              Partners
+              Local Companies
             </button>
             <button
-              className='transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
-              onClick={() => handleTabClick('subPartner2')}
+              className='transition delay-75 duration-75 ease-in text-white font-poppins text-md font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800'
+              onClick={() => handleTabClick('internationalPartners')}
             >
-              Partners
+              International Companies
             </button>
           </div>
           <button
