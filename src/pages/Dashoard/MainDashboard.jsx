@@ -6,6 +6,9 @@ import Registration from './pages/Registration';
 import Booking from './pages/Booking';
 import Login from '../Auth/Login';
 import Partner from './pages/Partner';
+import TourPackage from './pages/TourPackage';
+import HumanResource from './pages/HumanResource';
+import TourPackage2 from './pages/TourPackage2';
 
 function MainDashboard() {
   const [activeTab, setActiveTab] = useState('tab1')
@@ -22,6 +25,15 @@ function MainDashboard() {
 
             case 'tab4':
                 return <Partner />
+
+            case 'subPackage1':
+                return <TourPackage />
+            
+            case 'subPackage2':
+                return <TourPackage2 />
+
+            case 'tab6':
+                return <HumanResource />
 
             default:
                 return <Dashboard />
@@ -44,6 +56,18 @@ function MainDashboard() {
 
             case 'tab4':
                 setActiveTab('tab4')
+            break;
+
+            case 'subPackage1':
+                setActiveTab('subPackage1')
+            break;
+
+            case 'subPackage2':
+                setActiveTab('subPackage2')
+            break;
+
+            case 'tab6':
+                setActiveTab('tab6')
             break;
         }
     }
