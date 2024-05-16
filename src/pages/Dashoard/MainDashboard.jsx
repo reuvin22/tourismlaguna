@@ -5,6 +5,7 @@ import { NavigationContext } from '../../context/context';
 import Registration from './pages/Registration';
 import Booking from './pages/Booking';
 import Login from '../Auth/Login';
+import Partner from './pages/Partner';
 
 function MainDashboard() {
   const [activeTab, setActiveTab] = useState('tab1')
@@ -18,6 +19,9 @@ function MainDashboard() {
 
             case 'tab3':
                 return <Booking />
+
+            case 'tab4':
+                return <Partner />
 
             default:
                 return <Dashboard />
@@ -36,6 +40,10 @@ function MainDashboard() {
 
             case 'tab3':
                 setActiveTab('tab3')
+            break;
+
+            case 'tab4':
+                setActiveTab('tab4')
             break;
         }
     }

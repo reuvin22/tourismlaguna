@@ -1,21 +1,47 @@
 import React from 'react'
 import Cards from '../../../component/Cards'
+import { Chart } from 'chart.js'
 
 function Dashboard() {
   const cards = [
     {
+      img: "https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/image-removebg-preview%20(1).png?alt=media&token=8a4ff95b-cc9b-47df-a1ce-668e26eb0800",
       title: "Total Visitors",
       numbers: "15"
     },
     {
+      img: "https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/reservation.png?alt=media&token=de233a9e-64c1-4289-a1aa-ad27b18ae950",
       title: "Reservations",
       numbers: "10"
     },
     {
+      img: "https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/location.png?alt=media&token=43061b7a-d23e-4a98-851e-d5fd805c5f11",
       title: "Partners",
       numbers: "13"
     }
   ]
+
+  const staffs = [
+    {
+      id: 1,
+      img: 'https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/TMS%2FlagunaLogo.png?alt=media&token=f37b2e70-4d12-4e0f-8f67-2673b222b26b',
+      name: "Reuvin Hernandez",
+      role: "Admin"
+    },
+    {
+      id: 2,
+      img: 'https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/TMS%2FlagunaLogo.png?alt=media&token=f37b2e70-4d12-4e0f-8f67-2673b222b26b',
+      name: "Rambo Tan",
+      role: "Admin"
+    },
+    {
+      id: 3,
+      img: 'https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/TMS%2FlagunaLogo.png?alt=media&token=f37b2e70-4d12-4e0f-8f67-2673b222b26b',
+      name: "Tan Rambo",
+      role: "Staff"
+    }
+  ]
+
   return (
     <div className='w-full mt-10 grid gap-y-5'>
       <div className='flex gap-5'>
@@ -24,6 +50,7 @@ function Dashboard() {
             {cards.map(card => {
               return (
                 <Cards 
+                  img = {card.img}
                   title= {card.title}
                   numbers= {card.numbers}
                 />
@@ -38,11 +65,23 @@ function Dashboard() {
                     
                 </div>
             </div>
-            <div className='grid border-2 rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] w-[34%] h-36'>
+            <div className='grid border-2 rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] w-[34%] h-52'>
                 <h1 className='text-lg font-bold'>Visitor's Gender</h1>
-                <div className='flex gap-5'>
-                    <span className='text-4xl font-bold'>16</span>
+                <div className='gap-5'>
+                  <div class="mb-1 text-lg font-medium dark:text-white">Male</div>
+                    <div class="flex w-full h-6 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar bg-blue-600 text-xs text-white whitespace-nowrap dark:bg-blue-500 transition duration-500 w-[75%] flex justify-center">
+                          <span class="flex justify-center items-center rounded-full overflow-hidden">75%</span>
+                      </div>
+                  </div>
+                  <div class="mb-1 text-lg font-medium dark:text-white">Female</div>
+                    <div class="flex w-full h-6 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar bg-red-600 text-xs text-white whitespace-nowrap dark:bg-red-500 transition duration-500 w-[15%] flex justify-center">
+                          <span class="flex justify-center items-center rounded-full overflow-hidden">15%</span>
+                      </div>
+                  </div>
                 </div>
+                
             </div>
           </div>
         </div>
@@ -60,48 +99,36 @@ function Dashboard() {
       </div>
       <div className='flex gap-5'>
         <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-80 w-[66%]'>
-
+          <canvas id="chart"></canvas>
         </div>
-        <div className='rounded-lg px-10 bg-[#F9EFEF] h-80 w-[29.5%]'>
-          <div className='grid place-items-center mt-7'>
+        <div className='rounded-lg px-10 bg-[#F9EFEF] h-80 w-[32%] overflow-y-auto overflow-x-hidden'>
+          <div className='grid place-items-center py-3'>
             <span className='font-bold font-poppins text-2xl'>New Staffs</span>
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-              <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                  <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+            <div className="relative overflow-x-auto max-h-72 sm:rounded-lg">
+              <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
                       <tr>
-                          <th scope="col" class="px-6 py-3">
+                          <th scope="col" className="px-6 py-3">
+                            Image
                           </th>
-                          <th scope="col" class="px-6 py-3">
+                          <th scope="col" className="px-6 py-3">
                               Name
                           </th>
-                          <th scope="col" class="px-6 py-3">
+                          <th scope="col" className="px-6 py-3">
                               Role
                           </th>
                       </tr>
                   </thead>
                   <tbody>
-                      <tr class="border-b">
-                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                              Test
-                          </th>
-                          <td class="px-6 py-4">
-                              John Doe
-                          </td>
-                          <td class="px-6 py-4">
-                              Admin
-                          </td>
-                      </tr>
-                      <tr class="border-b ">
-                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                              Lala
-                          </th>
-                          <td class="px-6 py-4">
-                              Jessica Doe
-                          </td>
-                          <td class="px-6 py-4">
-                              Staff
-                          </td>
-                      </tr>
+                          {staffs.map((staffs, staffId) => {
+                            return (
+                              <tr key={staffId} className="border-b">
+                                <td className="px-6 py-4"><img src={staffs.img} className='max-w-12 min-w-12'/></td>
+                                <td className="px-6 py-4">{staffs.name}</td>
+                                <td className="px-6 py-4">{staffs.role}</td>
+                              </tr>
+                            )
+                          })}
                   </tbody>
               </table>
           </div>
