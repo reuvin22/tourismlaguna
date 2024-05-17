@@ -14,7 +14,7 @@ function Sidebar() {
   const handleOpen = (data) => {
     context?.onOpenSidebar(data);
   };
-  console.log(context?.openSidebar);
+  
   return (
     <div className="bg-gradient-to-r from-[#152259] to-blue-900 w-60 h-[100vh] overflow-y-hidden">
       {/* <img src='https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/image-removebg-preview%20(5).png?alt=media&token=e87a188b-4123-4845-85cf-2c9436f89753' className='h-8 w-8 sm:visible'/> */}
@@ -22,7 +22,7 @@ function Sidebar() {
         <div className="grid place-items-center w-full h-52 relative">
           <button
             onClick={() => handleOpen("closeSidebar")}
-            className={`${context?.openSidebar ? "sm:visible hidden" : "hidden"}`}
+            className={`${context?.openSidebar ? "sm:visible" : "hidden"}`}
           >
             <img
               src="https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/x_white.png?alt=media&token=40ea64b8-9729-474a-915f-cc5fe3d2d520"

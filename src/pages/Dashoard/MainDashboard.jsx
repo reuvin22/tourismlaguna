@@ -22,7 +22,7 @@ function MainDashboard() {
   const [activeTab, setActiveTab] = useState("tab1");
   const [dropdown, setOpenDropDown] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [open, setOpenSideBar] = useState(true);
+  const [open, setOpenSideBar] = useState(false);
 
   const navigate = useNavigate();
 
