@@ -140,7 +140,7 @@ function MainDashboard() {
       ) : (
         <div className="flex justify-center relative">
           <div
-            className={`${open ? "visible" : "hidden"} sm:z-10 sm:absolute sm:left-0`}
+            className={`${open ? "visible" : "visible sm:hidden"} sm:z-10 sm:absolute sm:left-0`}
           >
             <NavigationContext.Provider
               value={{
@@ -152,7 +152,7 @@ function MainDashboard() {
               <Sidebar />
             </NavigationContext.Provider>
           </div>
-          <div className={`${open ? "hidden" : "visible"}`}>
+          <div className={`${open ? "sm:hidden" : "sm:visible lg:hidden xl:hidden"}`}>
             <button onClick={() => handleOpenSideBar("openSidebar")}>
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/image-removebg-preview%20(5).png?alt=media&token=e87a188b-4123-4845-85cf-2c9436f89753"
