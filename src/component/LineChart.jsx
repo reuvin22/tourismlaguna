@@ -15,6 +15,9 @@ function LineChart({ data, title }) {
                     legend: {
                         display: true,
                         position: 'top',
+                        labels: {
+                            usePointStyle: true
+                        },
                     },
                     title: {
                         display: true,
@@ -22,8 +25,8 @@ function LineChart({ data, title }) {
                     }
                 },
                 responsive: true,
-                maintainAspectRatio: false, // Allow changing the aspect ratio
-                aspectRatio: 1.2
+                maintainAspectRatio: false, 
+                aspectRatio: 1.2,
             }
         });
 

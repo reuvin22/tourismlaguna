@@ -47,6 +47,7 @@ function Dashboard() {
     {
         title: "Visitor's Category",
         labels: ['Old', 'Children', 'Adult'],
+        
         datasets: [
             {
                 data: [300, 100, 50],
@@ -97,25 +98,27 @@ function Dashboard() {
   const data = {
     labels: labels,
     datasets: [{
+      pointStyle: 'circle',
       label: 'Expenses',
       data: [65, 59, 80, 81, 56, 55, 40, 50,20,12,13],
       fill: false,
-      borderColor: 'rgb(75, 192, 192)',
+      pointBackgroundColor: 'rgb(75, 192, 192)',
       tension: 0.1
     },{
+      pointStyle: 'circle',
       label: 'Profit',
       data: [50, 23, 28, 14, 56, 23, 98, 53,57,34,87],
       fill: false,
-      borderColor: 'red',
+      pointBackgroundColor: 'red',
       tension: 0.1
     },{
+      pointStyle: 'circle',
       label: 'Income',
       data: [23, 21, 65, 98, 76, 45, 65, 9,12,58,60],
       fill: false,
-      borderColor: 'blue',
+      pointBackgroundColor: 'orange',
       tension: 0.1
     }
-    
   ]
   };
 
