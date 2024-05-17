@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function TourPackage() {
-  return (
-    <div>TourPackage</div>
-  )
+  return <div>TourPackage</div>;
 }
 
-export default TourPackage
+export default TourPackage;

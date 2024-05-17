@@ -1,21 +1,21 @@
 import { createContext, useContext } from "react";
 
 export const FormContext = createContext({
-    initialFields: [],
-    design: null,
-})
+  initialFields: [],
+  design: null,
+});
 
 export const NavigationContext = createContext({
-    activePage: () => {},
-    ref: null,
-    onOpenSidebar: () => {},
-    openSidebar: false
-})
+  activePage: () => {},
+  ref: null,
+  onOpenSidebar: () => {},
+  openSidebar: null,
+});
 
 export const TableContext = createContext({
-    tableData: null,
-    tableHeader: null
-})
+  tableData: null,
+  tableHeader: null,
+});
 
 export const useTableContext = () => useContext(TableContext);
 export const useFormContext = () => useContext(FormContext);

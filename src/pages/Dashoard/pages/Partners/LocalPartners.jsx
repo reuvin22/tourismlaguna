@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function LocalPartners() {
-  return (
-    <div>LocalPartners</div>
-  )
+  return <div>LocalPartners</div>;
 }
 
-export default LocalPartners
+export default LocalPartners;

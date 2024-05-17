@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function HumanResource() {
-  return (
-    <div>HumanResource</div>
-  )
+  return <div>HumanResource</div>;
 }
 
-export default HumanResource
+export default HumanResource;
