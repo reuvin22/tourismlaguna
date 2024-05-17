@@ -7,7 +7,9 @@ export const FormContext = createContext({
 
 export const NavigationContext = createContext({
     activePage: () => {},
-    ref: null
+    ref: null,
+    onOpenSidebar: () => {},
+    openSidebar: false
 })
 
 export const TableContext = createContext({
