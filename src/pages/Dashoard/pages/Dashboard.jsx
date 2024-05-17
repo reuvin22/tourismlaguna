@@ -153,7 +153,7 @@ function Dashboard() {
           </div>
       </div>
       <div className='flex gap-5 sm:grid'>
-        <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-80 w-[66%] sm:h-36 sm:w-80'>
+        <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-96 w-[66%] sm:h-80 sm:w-80'>
           <LineChart data={data} title="Annual Chart"/>
         </div>
         <div className='rounded-lg px-10 bg-[#F9EFEF] h-80 w-[32%] overflow-y-auto overflow-x-hidden sm:w-80'>

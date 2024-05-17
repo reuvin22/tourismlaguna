@@ -14,14 +14,16 @@ function LineChart({ data, title }) {
                 plugins: {
                     legend: {
                         display: true,
-                        position: 'right',
+                        position: 'top',
                     },
                     title: {
                         display: true,
                         text: title
                     }
                 },
-                responsive: true
+                responsive: true,
+                maintainAspectRatio: false, // Allow changing the aspect ratio
+                aspectRatio: 1.2
             }
         });
 
