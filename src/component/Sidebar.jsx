@@ -9,9 +9,12 @@ function Sidebar() {
 
   const handleTabClick = (data) => {
     context?.activePage(data)
+    setPartOpenAcc(false)
+    setTourOpenAcc(false)
   }
   return (
     <div className='bg-gradient-to-r from-[#152259] to-blue-900 w-60 h-[100vh] sm:hidden overflow-y-hidden'>
+      {/* <img src='https://firebasestorage.googleapis.com/v0/b/projectimages-a2f47.appspot.com/o/image-removebg-preview%20(5).png?alt=media&token=e87a188b-4123-4845-85cf-2c9436f89753' className='h-8 w-8 sm:visible'/> */}
       <div className='grid gap-10'>
         <div className='grid place-items-center w-full h-52'>
             <div className='rounded-full bg-white w-32 h-32'>

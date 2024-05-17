@@ -158,7 +158,7 @@ function MainDashboard() {
                             </div>
                         </div>
                     </div>
-                    <div className='w-full'>
+                    <div className='w-full mt-10'>
                         <NavigationContext.Provider value={{ 
                             activePage: (data) => handleOnClick(data)
                          }}>

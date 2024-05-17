@@ -23,9 +23,10 @@ function Staffs() {
     }
     
   return (
-    <div className='w-full grid place-items-center border-8 h-[100vh]'>
-        <div className='grid gap-2 border-8 min-h-96 min-w-[80%]'>
-            <div className='flex justify-end items-end h-12'>
+    <div className='w-full h-[100vh]'>
+        <h1 className='text-center font-bold text-3xl'>Staffs</h1>
+        <div className='min-h-96 min-w-[80%]'>
+            <div className='mb-2 flex justify-end items-end h-12'>
                 <Button
                     btnIcon='register'
                     btnSize='normalSize'

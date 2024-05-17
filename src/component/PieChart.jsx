@@ -33,7 +33,7 @@ function PieChart({ data, title }) {
     }, [data]);
 
     return (
-        <div className='grid place-items-center rounded-lg py-5 gap-2 bg-[#F9EFEF] w-full h-52 relative'>
+        <div className='grid place-items-center rounded-lg py-5 gap-2 bg-[#F9EFEF] w-full h-52 relative sm:h-80'>
             <canvas ref={canvasRef} id='pie'></canvas>
         </div>
     );

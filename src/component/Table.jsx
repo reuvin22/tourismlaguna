@@ -5,7 +5,7 @@ function Table() {
     const context = useTableContext()
   return (
     <div>
-        <table className="min-w-full divide-gray-200">
+        <table className="min-w-full min-h-full divide-gray-200">
             <thead>
                 <tr>
                     {context?.tableHeader.map(tblHeader => {

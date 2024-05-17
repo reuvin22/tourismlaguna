@@ -51,7 +51,7 @@ function Dashboard() {
             {
                 data: [300, 100, 50],
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
+                    'red',
                     'rgb(54, 162, 235)',
                     'rgb(255, 205, 86)'
                 ],
@@ -66,7 +66,7 @@ function Dashboard() {
               data: [300, 100],
               backgroundColor: [
                   'rgb(54, 162, 235)',
-                  'rgb(255, 99, 132)',
+                  'red',
               ],
               hoverOffset: 4,
           }
@@ -79,7 +79,7 @@ function Dashboard() {
             data: [300, 100],
             backgroundColor: [
                 'rgb(54, 162, 235)',
-                'rgb(255, 99, 132)',
+                'red',
             ],
             hoverOffset: 4,
         }
@@ -120,10 +120,10 @@ function Dashboard() {
   };
 
   return (
-    <div className='w-full mt-10 grid gap-y-5'>
-      <div className='flex gap-5'>
+    <div className='w-full grid gap-y-5 sm:place-items-center'>
+      <div className='flex gap-5 sm:grid'>
         <div className='grid gap-5'>
-          <div className='flex gap-5'> 
+          <div className='flex gap-5 sm:grid sm:gap-2 sm:w-80'> 
             {cards.map(card => {
               return (
                 <Cards 
@@ -134,13 +134,13 @@ function Dashboard() {
               )
             })}
           </div>
-          <div className='flex gap-2 w-full relative'>
+          <div className='flex gap-2 w-full relative sm:grid sm:w-80'>
             {pieChartData.map((data, index) => (
               <PieChart key={index} data={data} title={data.title}/>
             ))}
           </div>
         </div>
-          <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-full w-56'>
+          <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-full w-56 sm:w-80'>
             <div className='grid'>
               <div className='flex gap-5'>
                 <span className='font-bold font-poppins text-xl'>Visitor</span>
@@ -152,11 +152,11 @@ function Dashboard() {
             </div>
           </div>
       </div>
-      <div className='flex gap-5'>
-        <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-80 w-[66%]'>
+      <div className='flex gap-5 sm:grid'>
+        <div className='rounded-lg py-5 px-10 gap-2 bg-[#F9EFEF] h-80 w-[66%] sm:h-36 sm:w-80'>
           <LineChart data={data} title="Annual Chart"/>
         </div>
-        <div className='rounded-lg px-10 bg-[#F9EFEF] h-80 w-[32%] overflow-y-auto overflow-x-hidden'>
+        <div className='rounded-lg px-10 bg-[#F9EFEF] h-80 w-[32%] overflow-y-auto overflow-x-hidden sm:w-80'>
           <div className='grid place-items-center py-3'>
             <span className='font-bold font-poppins text-2xl'>New Staffs</span>
             <div className="relative overflow-x-auto max-h-72 sm:rounded-lg">
