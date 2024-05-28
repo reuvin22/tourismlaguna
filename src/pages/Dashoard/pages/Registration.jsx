@@ -1,13 +1,18 @@
 import React from "react";
 import Button from "../../../component/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useNavigationContext } from "../../../context/context";
 
 function Registration() {
   const context = useNavigationContext();
+  const navigate = useNavigate()
   const handleTabClick = (data) => {
     context?.activePage(data);
   };
+
+  const handleNavigate = () => {
+    navigate('/dashboard')
+  }
   return (
     <div className="w-full mt-5">
       <form>
@@ -90,7 +95,7 @@ function Registration() {
             <Button
               bgColor="blue"
               btnSize="normalSize"
-              onClick={() => handleTabClick()}
+              onClick={() => handleNavigate()}
             >
               <span className="h-5 w-5">&larr;</span>
               Back
