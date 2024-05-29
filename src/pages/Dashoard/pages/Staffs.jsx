@@ -14,7 +14,7 @@ function Staffs() {
   };
 
   return (
-    <div className="w-full h-[100vh]">
+    <div className="w-full">
       <h1 className="text-center font-bold text-3xl">Staffs</h1>
       <div className="min-h-96 min-w-[80%]">
         <div className="mb-2 flex justify-end items-end h-12">
@@ -31,6 +31,7 @@ function Staffs() {
           value={{
             tableData: data,
             tableHeader: header,
+            hoverClick: true
           }}
         >
           <Table />

@@ -6,17 +6,14 @@ import Registration from "./pages/Registration";
 import Booking from "./pages/Booking";
 import Login from "../Auth/Login";
 import Partner from "./pages/Partner";
-import TourPackage from "./pages/TourPackage/TourPackage";
 import HumanResource from "./pages/HumanResource";
-import TourPackage2 from "./pages/TourPackage/TourPackage2";
 import Dropdown from "../../component/Dropdown";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../component/Loading";
-import LocalPartners from "./pages/Partners/LocalPartners";
-import InternationalPartners from "./pages/Partners/InternationalPartners";
 import Staffs from "./pages/Staffs";
 import Reports from "./pages/Reports";
 import Inquiries from "./pages/Inquiries";
+import Sites from "./pages/Sites";
 
 function MainDashboard() {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -38,15 +35,9 @@ function MainDashboard() {
         return <Booking />;
       case "tab4":
         return <Partner />;
+      case "tab5":
+        return <Sites />;
       case "localPartners":
-        return <LocalPartners />;
-      case "internationalPartners":
-        return <InternationalPartners />;
-      case "subPackage1":
-        return <TourPackage />;
-      case "subPackage2":
-        return <TourPackage2 />;
-      case "tab6":
         return <HumanResource />;
       case "tab7":
         return <Reports />;
@@ -88,22 +79,9 @@ function MainDashboard() {
         setActiveTab("tab4");
         break;
 
-      case "localPartners":
-        setActiveTab("localPartners");
+      case "tab5":
+          setActiveTab("tab5");
         break;
-
-      case "internationalPartners":
-        setActiveTab("internationalPartners");
-        break;
-
-      case "subPackage1":
-        setActiveTab("subPackage1");
-        break;
-
-      case "subPackage2":
-        setActiveTab("subPackage2");
-        break;
-
       case "tab6":
         setActiveTab("tab6");
         break;
@@ -138,7 +116,7 @@ function MainDashboard() {
       {loading ? (
         <Loading />
       ) : (
-        <div className="flex justify-center relative">
+        <div className="flex justify-center relative overflow-x-hidden">
           <div
             className={`${open ? "visible" : "visible sm:hidden"} sm:z-10 sm:absolute sm:left-0`}
           >

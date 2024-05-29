@@ -92,14 +92,13 @@ function Registration() {
             <Button bgColor="green" btnIcon="submit" btnSize="normalSize">
               Submit
             </Button>
-            <Button
-              bgColor="blue"
-              btnSize="normalSize"
-              onClick={() => handleNavigate()}
-            >
-              <span className="h-5 w-5">&larr;</span>
-              Back
-            </Button>
+              <Button
+                bgColor="blue"
+                btnSize="normalSize"
+              >
+                <span className="h-5 w-5">&larr;</span>
+                Back
+              </Button>
           </div>
         </div>
       </form>

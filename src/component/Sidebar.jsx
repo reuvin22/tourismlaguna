@@ -58,11 +58,9 @@ function Sidebar() {
           </button>
           <button
             className="transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800"
-            onClick={() => setPartOpenAcc(!openPartAcc)}
+            onClick={() => handleTabClick("tab5")}
           >
-            <div className="flex justify-center items-center">
-              <span className="">Sites</span>
-            </div>
+            Sites
           </button>
           <button
             className="transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800"
