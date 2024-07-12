@@ -6,7 +6,6 @@ import Registration from "./pages/Registration";
 import Booking from "./pages/Booking";
 import Login from "../Auth/Login";
 import Partner from "./pages/Partner";
-import HumanResource from "./pages/HumanResource";
 import Dropdown from "../../component/Dropdown";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../component/Loading";
@@ -37,8 +36,6 @@ function MainDashboard() {
         return <Partner />;
       case "tab5":
         return <Sites />;
-      case "localPartners":
-        return <HumanResource />;
       case "tab7":
         return <Reports />;
       case "tab8":
@@ -81,9 +78,6 @@ function MainDashboard() {
 
       case "tab5":
           setActiveTab("tab5");
-        break;
-      case "tab6":
-        setActiveTab("tab6");
         break;
 
       case "tab7":

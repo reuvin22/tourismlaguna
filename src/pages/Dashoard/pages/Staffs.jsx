@@ -5,9 +5,9 @@ import Button from "../../../component/Button";
 
 function Staffs() {
   const context = useNavigationContext();
-  const header = ["name", "surname", "lastname"];
+  const header = ["name", "surname", "lastname", "contact Number", "email", "role"];
 
-  const data = ["reuvin", "hernandez", "galosmo"];
+  const data = ["reuvin", "hernandez", "galosmo", "09126052161", "reuvin@gmail.com", "Staff"];
 
   const handleAdd = (data) => {
     context?.activePage(data);
@@ -16,17 +16,7 @@ function Staffs() {
   return (
     <div className="w-full">
       <h1 className="text-center font-bold text-3xl">Staffs</h1>
-      <div className="min-h-96 min-w-[80%]">
-        <div className="mb-2 flex justify-end items-end h-12">
-          <Button
-            btnIcon="register"
-            btnSize="normalSize"
-            bgColor="green"
-            onClick={() => handleAdd("register")}
-          >
-            Add
-          </Button>
-        </div>
+      <div className="min-h-96 min-w-[80%] mt-5">
         <TableContext.Provider
           value={{
             tableData: data,

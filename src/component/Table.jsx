@@ -18,18 +18,22 @@ function Table() {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {context?.tableData.map((tblData) => {
-            return (
-              <tr>
+          <tr
+            className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer ${
+              context?.hoverClick ? 'text-gray-500' : 'bg-gray-50 text-gray-500'
+            } hover:bg-gray-400`}
+          >
+            {context?.tableData.map((tblData) => {
+              return (
                 <td
                   key={tblData.id}
-                  className={context?.hoverClick === true ? `px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-700 uppercase tracking-wider hover:bg-gray-400 cursor-pointer` : `px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider`}
+                  className="px-6 py-3 bg-transparent text-left text-xs font-medium uppercase tracking-wider"
                 >
                   {tblData}
                 </td>
-              </tr>
-            );
-          })}
+              );
+            })}
+          </tr>
         </tbody>
       </table>
     </div>

@@ -10,6 +10,7 @@ export const NavigationContext = createContext({
   ref: null,
   onOpenSidebar: () => {},
   openSidebar: null,
+  onNavigate: () => {}
 });
 
 export const TableContext = createContext({

@@ -52,21 +52,10 @@ function Sidebar() {
             Staffs
           </button>
           <button
-            className="transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-15 hover:text-blue-800"
-            onClick={() => setTourOpenAcc(!openTourAcc)}
-          >
-          </button>
-          <button
             className="transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800"
             onClick={() => handleTabClick("tab5")}
           >
             Sites
-          </button>
-          <button
-            className="transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800"
-            onClick={() => handleTabClick("tab6")}
-          >
-            Human Resource
           </button>
           <button
             className="transition delay-75 duration-75 ease-in text-white font-poppins text-xl font-bold hover:bg-white w-full rounded-md h-12 hover:text-blue-800"
