@@ -3,7 +3,7 @@ import Table from "../../../component/Table";
 import { TableContext } from "../../../context/context";
 import Button from "../../../component/Button";
 function Reports() {
-  const header = ["Report ID", "Issue", "Department", "Email"];
+  const header = ["Report ID", "Issue", "Department", "Email", "actions"];
 
   const data = ["012OK391K", "Bad Management", "IT DEPARTMENT", "reuvin@gmail.com"];
   return (
@@ -14,7 +14,8 @@ function Reports() {
           value={{
             tableData: data,
             tableHeader: header,
-            hoverClick: true
+            hoverClick: true,
+            actions: true
           }}
         >
           <Table />

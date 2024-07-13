@@ -3,6 +3,8 @@ import { createContext, useContext } from "react";
 export const FormContext = createContext({
   initialFields: [],
   design: null,
+  onSubmit: () => {},
+  title: ''
 });
 
 export const NavigationContext = createContext({
@@ -16,10 +18,14 @@ export const NavigationContext = createContext({
 export const TableContext = createContext({
   tableData: null,
   tableHeader: null,
-  hoverClick: false
+  hoverClick: false,
+  actions: false
 });
 export const ModalContext = createContext({
-  openModal: false
+  formInputs: [],
+  openModal: () => {},
+  modalSet: false,
+  title: ''
 });
 
 export const useModalContext = () => useContext(ModalContext);

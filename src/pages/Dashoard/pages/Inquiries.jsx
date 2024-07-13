@@ -3,7 +3,7 @@ import Button from "../../../component/Button";
 import Table from "../../../component/Table";
 import { TableContext } from "../../../context/context";
 function Inquiries() {
-  const header = ["Ticket No.", "Issue", "Department", "Subject", "Email"];
+  const header = ["Ticket No.", "Issue", "Department", "Subject", "Email", "actions"];
 
   const data = ["1", "Pogi", "Kwarto", "Super Pogi", "reuvin@gmail.com"];
   return (
@@ -14,7 +14,8 @@ function Inquiries() {
           value={{
             tableData: data,
             tableHeader: header,
-            hoverClick: true
+            hoverClick: true,
+            actions: true
           }}
         >
           <Table />

@@ -3,7 +3,7 @@ import Button from '../../../component/Button';
 import { TableContext } from '../../../context/context';
 import Table from '../../../component/Table';
 function Sites() {
-  const header = ["Site ID", "Site Name", "Location", "Staff Assigned", "Role"];
+  const header = ["Site ID", "Site Name", "Location", "Staff Assigned", "Role", "actions"];
 
   const data = ["0OP1L2K39", "DIPALAWAN", "AURORA", "REUVIN HERNANDEZ", "ADMIN"];
   return (
@@ -14,7 +14,8 @@ function Sites() {
           value={{
             tableData: data,
             tableHeader: header,
-            hoverClick: true
+            hoverClick: true,
+            actions: true
           }}
         >
           <Table />

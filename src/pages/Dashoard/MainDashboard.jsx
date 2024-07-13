@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Dashboard from "./pages/Dashboard";
 import Sidebar from "../../component/Sidebar";
-import { NavigationContext } from "../../context/context";
-import Registration from "./pages/Registration";
+import { ModalContext, NavigationContext, useModalContext } from "../../context/context";
 import Booking from "./pages/Booking";
 import Login from "../Auth/Login";
 import Partner from "./pages/Partner";
@@ -21,13 +20,22 @@ function MainDashboard() {
   const [open, setOpenSideBar] = useState(false);
 
   const navigate = useNavigate();
-
+  const modal = useModalContext()
+  const inputs = [
+    {name: "reuvin", label: "test", type: "text"}
+  ]
   const renderPage = useMemo(() => {
     switch (activeTab) {
       case "tab1":
         return <Dashboard />;
       case "tab2":
-        return <Staffs />;
+        return (
+          <ModalContext.Provider value={{ 
+            modalSet: modal?.modalSet
+           }}>
+            <Staffs />
+          </ModalContext.Provider>
+        )
       case "register":
         return <Registration />;
       case "tab3":

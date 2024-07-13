@@ -1,17 +1,22 @@
 import React from "react";
-import { TableContext, useNavigationContext } from "../../../context/context";
+import { ModalContext, TableContext, useModalContext, useNavigationContext } from "../../../context/context";
 import Table from "../../../component/Table";
 import Button from "../../../component/Button";
-
+import Modal from "../../../component/Modal";
 function Staffs() {
   const context = useNavigationContext();
-  const header = ["name", "surname", "lastname", "contact Number", "email", "role"];
+  const modal = useModalContext()
+  const header = ["name", "surname", "lastname", "contact Number", "email", "role", "action"];
 
-  const data = ["reuvin", "hernandez", "galosmo", "09126052161", "reuvin@gmail.com", "Staff"];
+  const data = [
+    "reuvin", "hernandez", "galosmo", "09126052161", "reuvin@gmail.com", "Staff"
+  ];
 
-  const handleAdd = (data) => {
-    context?.activePage(data);
-  };
+  const inputs = [
+    {name:"name", type:"text", placeholder: "Enter Pogi"},
+    {name:"name", type:"text", placeholder: "Enter Pogi"},
+    {name:"name", type:"text", placeholder: "Enter Pogi"}
+  ]
 
   return (
     <div className="w-full">
@@ -21,7 +26,8 @@ function Staffs() {
           value={{
             tableData: data,
             tableHeader: header,
-            hoverClick: true
+            hoverClick: true,
+            actions: true
           }}
         >
           <Table />
