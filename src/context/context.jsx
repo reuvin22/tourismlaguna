@@ -4,7 +4,8 @@ export const FormContext = createContext({
   initialFields: [],
   design: null,
   onSubmit: () => {},
-  title: ''
+  title: '',
+  formDesign: ''
 });
 
 export const NavigationContext = createContext({
@@ -16,16 +17,29 @@ export const NavigationContext = createContext({
 });
 
 export const TableContext = createContext({
+  state: '',
+  data: null,
+  updateModal: false,
   tableData: null,
   tableHeader: null,
+  openData: false,
   hoverClick: false,
-  actions: false
+  actions: false,
+  modals: false,
+  formInput: [],
+  setOpenData: () => {},
+  formDesign: '',
+  title: '',
+  setModalOpen: () => {},
+  modalButtons: false
 });
 export const ModalContext = createContext({
   formInputs: [],
-  openModal: () => {},
-  modalSet: false,
-  title: ''
+  formDesign: '',
+  title: '',
+  modalButtons: false,
+  modalOpen: false,
+  setModalOpen: () => {},
 });
 
 export const useModalContext = () => useContext(ModalContext);

@@ -29,7 +29,7 @@ function Login() {
         <h1 className="font-bold text-white text-2xl font-poppins text-center">
           Welcome
         </h1>
-        <div className="grid place-items-center gap-2">
+        <div className="grid place-items-center">
           <FormContext.Provider
             value={{
               initialFields,

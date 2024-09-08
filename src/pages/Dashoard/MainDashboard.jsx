@@ -29,13 +29,7 @@ function MainDashboard() {
       case "tab1":
         return <Dashboard />;
       case "tab2":
-        return (
-          <ModalContext.Provider value={{ 
-            modalSet: modal?.modalSet
-           }}>
-            <Staffs />
-          </ModalContext.Provider>
-        )
+        return <Staffs />
       case "register":
         return <Registration />;
       case "tab3":
